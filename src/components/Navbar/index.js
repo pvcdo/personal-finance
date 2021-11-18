@@ -1,0 +1,29 @@
+import React from 'react';
+import {
+Nav,
+NavLink,
+Bars,
+NavMenu,
+NavBtn,
+NavBtnLink,
+} from './style';
+
+const Navbar = () => {
+return (
+	<>
+	<Nav>
+		<Bars />
+
+		<NavMenu>
+		<NavLink to='/Home' activeStyle>
+			Home
+		</NavLink>
+		{/* Second Nav */}
+		{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+		</NavMenu>
+	</Nav>
+	</>
+);
+};
+
+export default Navbar;

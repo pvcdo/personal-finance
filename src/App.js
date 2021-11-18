@@ -1,13 +1,20 @@
-import './App.css';
+import React from "react";
+import Home from './pages/Home';
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Este é o primeiro commit</h1>
-        <p>Nos próximos vamos começar!</p>
-      </header>
-    </div>
+    
+      /*<Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' component={Home} />
+        </Switch>
+      </Router>*/
+
+      <Home/>
+    
   );
 }
 
