@@ -1,14 +1,23 @@
 import React from "react";
-import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Painel from './pages/Painel';
+import Historico from './pages/Historico';
+import NovoGasto from './pages/NovoGasto';
+
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar/>
-      <Home/>
-    </>
+      <Routes>
+        <Route path='/' element={<Painel/>} />
+        <Route path='/novogasto' element={<NovoGasto/>} />
+        <Route path='/historico' element={<Historico/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

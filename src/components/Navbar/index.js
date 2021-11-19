@@ -1,21 +1,21 @@
 import React from 'react';
-import {Nav,ListNav,ItemListNav} from './style';
+import {Nav,NavMenu,NavLink} from './style';
 
 const Navbar = () => {
 return (
 	<>
 	<Nav>
-		<ListNav>
-			<ItemListNav>
-				Primeiro
-			</ItemListNav>
-			<ItemListNav>
-				Segundo
-			</ItemListNav>
-			<ItemListNav>
-				Terceiro
-			</ItemListNav>
-		</ListNav>
+		<NavMenu>
+			<NavLink to='/' activeStyle>
+				Painel
+			</NavLink>
+			<NavLink to='/novogasto' activeStyle>
+				Novo gasto
+			</NavLink>
+			<NavLink to='/historico' activeStyle>
+				Historico
+			</NavLink>
+		</NavMenu>
 	</Nav>
 	</>
 );
