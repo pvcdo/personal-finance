@@ -1,20 +1,31 @@
-import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 
 export const Nav = styled.nav`
-	background: #63D471;
+	background: #B2FF9E;
 	height: 85px;
 	display: flex;
 	justify-content: space-between;
-	padding: 0.2rem calc((100vw - 1000px) / 2);
-	z-index: 12;
-	/* Third Nav */
-	/* justify-content: flex-start; */
+	/*padding: 0.2rem calc((100vw - 1000px) / 2);*/
+	/*justify-content: flex-end;*/
 `;
 
-export const ListNav = styled.ul`
-	display: flex;
+export const Logo = styled.h2`
+  color: #fff;
+  margin-left: 20px;
+`;
+
+export const NavMenu = styled.div`
+  display: flex;
+  align-items: right;
+  /* Second Nav */
+  /* margin-right: 24px; */
+  /* Third Nav */
+  /* width: 100vw;
+  white-space: nowrap; */
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -27,19 +38,5 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   &.active {
     color: #000000;
-  }
-`;
-
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
-  @media screen and (max-width: 768px) {
-    display: none;
   }
 `;

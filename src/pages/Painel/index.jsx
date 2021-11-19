@@ -1,5 +1,24 @@
-import React from "react";
+import {FaixaResumos,Resumo,AreaGrafica, Grafico} from './style'
 
-const Painel = () => <h1>Este é o painel</h1>
+const Painel = () => {
+    return(
+        <>
+            <FaixaResumos>
+                <Resumo />
+                <Resumo />
+                <Resumo />
+            </FaixaResumos>
+            <AreaGrafica>
+                <Grafico />
+            </AreaGrafica>
+            <AreaGrafica>
+                <Grafico />
+            </AreaGrafica>
+            <AreaGrafica>
+                <Grafico />
+            </AreaGrafica>
+        </>
+    )
+}
 
 export default Painel;

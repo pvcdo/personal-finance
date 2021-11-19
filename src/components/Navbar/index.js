@@ -1,10 +1,11 @@
 import React from 'react';
-import {Nav,NavMenu,NavLink} from './style';
+import {Nav,NavMenu,NavLink, Logo} from './style';
 
 const Navbar = () => {
 return (
 	<>
 	<Nav>
+		<Logo>Logo</Logo>
 		<NavMenu>
 			<NavLink to='/' activeStyle>
 				Painel
