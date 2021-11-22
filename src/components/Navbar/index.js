@@ -7,7 +7,7 @@ return (
 	<Nav>
 		<Logo>Logo</Logo>
 		<NavMenu>
-			<NavLink to='/' activeStyle>
+			<NavLink to='/painel' activeStyle>
 				Painel
 			</NavLink>
 			<NavLink to='/novogasto' activeStyle>
