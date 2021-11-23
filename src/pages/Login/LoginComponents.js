@@ -16,7 +16,7 @@ export const LoginArea = styled.div`
     border-radius: 30px;
 `;
 
-export const Usuario = styled.div`
+export const Usuario = styled.input`
     background-color: red;
     margin-top: 60px;
 `;
@@ -26,7 +26,7 @@ export const Senha = styled.div`
     margin-top: 60px;
 `;
 
-export const Botao = styled.button`
+export const BotaoLogar = styled.input`
     background-color: red;
     border: none;
     margin: 10px;
@@ -34,6 +34,7 @@ export const Botao = styled.button`
 `;
 
 export const AreaButtons = styled.div`
-    
+    display: flex;
+    justify-content: end;
 `;
 

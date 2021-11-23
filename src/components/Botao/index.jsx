@@ -5,7 +5,8 @@ function Botao(props) {
             {
                 backgroundColor: color,
                 border: 'none',
-                margin: '10px'
+                margin: '10px',
+                padding: '15px 32px'
             }
         }>
             {name}
