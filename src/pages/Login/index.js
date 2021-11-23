@@ -1,6 +1,7 @@
 import React from "react";
-//import Botao from "../../components/Botao";
-import {LoginArea, Usuario, Senha,AreaButtons, BotaoLogar} from './LoginComponents';
+
+import {CampoInput,Cadastre,LoginForm, LoginArea, BotaoLogar} from './LoginComponents';
+import {Nav} from '../../components/Navbar/style';
 
 class Login extends React.Component {
     constructor(props) {
@@ -30,32 +31,40 @@ class Login extends React.Component {
     render(){
         return(
             <>
+                <Nav />
                 <LoginArea>
-                    <label for='usuario'>Usuário:</label>
-                    <br/>
-                    <input
-                        id='usuario'
-                        name="usuario"            
-                        type="text"
-                        checked={this.state.usuario}
-                        onChange={this.handleInputChange} 
-                    />
-                    <br />
-                    <label for='senha'>Senha:</label>
-                    <br/>
-                    <input
-                        id='senha'
-                        name="senha"            
-                        type="password"
-                        value={this.state.senha}
-                        onChange={this.handleInputChange} 
-                    />
-                    <br/>
-                    <BotaoLogar 
-                        type="submit" 
-                        value="Logar"
-                        onClick={this.handleSubmit}
-                    />
+                    <LoginForm method='post'>
+                        <label for='usuario'>e-mail:</label>
+                        <br/>
+                        <CampoInput
+                            id='usuario'
+                            name="usuario"            
+                            type="text"
+                            checked={this.state.usuario}
+                            onChange={this.handleInputChange} 
+                        />
+                        <br /><br />
+                        <label for='senha'>senha:</label>
+                        <br/>
+                        <CampoInput
+                            id='senha'
+                            name="senha"            
+                            type="password"
+                            value={this.state.senha}
+                            onChange={this.handleInputChange} 
+                        />
+                        <br/>
+                        <br/>
+                        <BotaoLogar 
+                            type="submit"
+                            onClick={this.handleSubmit}
+                        >Logar</BotaoLogar>
+                        <br/>
+                        <br/>
+                    </LoginForm>
+                    <Cadastre>
+                        <p style={{color: '#666'}}>Não tem login? <a style={{color: '#666'}} href="#">Cadastre-se!</a></p>
+                    </Cadastre>
                 </LoginArea>
             </>
         )
