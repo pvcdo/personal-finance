@@ -27,6 +27,9 @@ export const TesteDiv = styled.div`
 export const CampoInput = styled.input`
     width: 100%;
     border: 1px solid #CCCCCC;
+    &:focus{
+        outline: none;
+    }
 `;
 
 export const Senha = styled.div`
