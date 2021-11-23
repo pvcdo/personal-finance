@@ -34,7 +34,7 @@ class Login extends React.Component {
                 <Nav />
                 <LoginArea>
                     <LoginForm method='post'>
-                        <label for='usuario'>e-mail:</label>
+                        <label style={{color:'#666'}} for='usuario'>e-mail:</label>
                         <br/>
                         <CampoInput
                             id='usuario'
@@ -44,7 +44,7 @@ class Login extends React.Component {
                             onChange={this.handleInputChange} 
                         />
                         <br /><br />
-                        <label for='senha'>senha:</label>
+                        <label style={{color:'#666'}} for='senha'>senha:</label>
                         <br/>
                         <CampoInput
                             id='senha'
@@ -58,12 +58,13 @@ class Login extends React.Component {
                         <BotaoLogar 
                             type="submit"
                             onClick={this.handleSubmit}
+                            href='/painel'
                         >Logar</BotaoLogar>
                         <br/>
                         <br/>
                     </LoginForm>
                     <Cadastre>
-                        <p style={{color: '#666'}}>Não tem login? <a style={{color: '#666'}} href="#">Cadastre-se!</a></p>
+                        <p style={{color: '#666'}}>Não tem login? <a style={{color: '#666'}} href="/painel">Cadastre-se!</a></p>
                     </Cadastre>
                 </LoginArea>
             </>

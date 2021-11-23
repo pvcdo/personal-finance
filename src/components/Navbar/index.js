@@ -16,6 +16,11 @@ return (
 			<NavLink to='/historico' activeStyle>
 				Historico
 			</NavLink>
+			<NavLink to='/' activeStyle>
+				<button>
+					Sair
+				</button>
+			</NavLink>
 		</NavMenu>
 	</Nav>
 	</>

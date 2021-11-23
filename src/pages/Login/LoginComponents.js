@@ -38,7 +38,7 @@ export const Senha = styled.div`
 
 export const BotaoLogar = styled.button`
     display: inline-block ;
-    background-color: #499167;
+    background-color: rgba(29,57,40,0.7);
     border: none;
     width: 100%;
     padding: 10px;
@@ -46,7 +46,7 @@ export const BotaoLogar = styled.button`
     color: #fff;
     border-radius: 3px;
     &:hover{
-        background-color: rgba(29,57,40,0.7);
+        background-color: #499167;
     }
 `;
 
