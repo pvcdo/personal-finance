@@ -1,5 +1,5 @@
 import Navbar from '../../components/Navbar';
-import Checkbox from '@mui/material/Checkbox';
+import MultipleSelect from '../../components/OpenSelection'
 
 import React from "react";
 
@@ -29,7 +29,10 @@ const NovoGasto = () => {
                         <input id='valor' type='number' value=''/>
                     </div>
                     <div style={{display: 'flex', flexDirection:'row'}}>
-                        <Checkbox label='Bernardo' />
+                        <MultipleSelect options={[
+                            'c/c',
+                            'Bernardo',
+                        ]} />
                     </div>
                 </div>
                 <div style={formStyle}>
