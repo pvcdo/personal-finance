@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Painel from './pages/Painel';
 import Historico from './pages/Historico';
 import NovoGasto from './pages/NovoGasto';
+import Cadastrar from './pages/Cadastrar';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/painel' element={<Painel/>} />
         <Route path='/novogasto' element={<NovoGasto/>} />
         <Route path='/historico' element={<Historico/>} />
+        <Route path='/cadastrar' element={<Cadastrar/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 import {CampoInput,Cadastre,LoginForm, LoginArea, BotaoLogar} from './LoginComponents';
 import {Nav} from '../../components/Navbar/style';
@@ -33,7 +34,7 @@ class Login extends React.Component {
             <>
                 <Nav />
                 <LoginArea>
-                    <LoginForm method='post'>
+                    <LoginForm>
                         <label style={{color:'#666'}} for='usuario'>e-mail:</label>
                         <br/>
                         <CampoInput
@@ -55,16 +56,19 @@ class Login extends React.Component {
                         />
                         <br/>
                         <br/>
-                        <BotaoLogar 
-                            type="submit"
-                            onClick={this.handleSubmit}
-                            href='/painel'
-                        >Logar</BotaoLogar>
+                        <Link to='/painel' activeStyle>
+                            <BotaoLogar 
+                                type="submit"
+                                //onClick={this.handleSubmit}
+                            >
+                                Logar
+                            </BotaoLogar>
+                        </Link>
                         <br/>
                         <br/>
                     </LoginForm>
                     <Cadastre>
-                        <p style={{color: '#666'}}>Não tem login? <a style={{color: '#666'}} href="/painel">Cadastre-se!</a></p>
+                        <p style={{color: '#666'}}>Não tem login? <a style={{color: '#666'}} href="/cadastrar">Cadastre-se!</a></p>
                     </Cadastre>
                 </LoginArea>
             </>
