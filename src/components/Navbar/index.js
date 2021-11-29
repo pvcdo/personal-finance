@@ -1,5 +1,6 @@
 import React from 'react';
 import {Nav,NavMenu,NavLink, Logo} from './style';
+import {Button} from 'react-bootstrap'
 
 const Navbar = () => {
 return (
@@ -17,9 +18,9 @@ return (
 				Historico
 			</NavLink>
 			<NavLink to='/' activeStyle>
-				<button>
+				<Button variant="outline-light">
 					Sair
-				</button>
+				</Button>
 			</NavLink>
 		</NavMenu>
 	</Nav>

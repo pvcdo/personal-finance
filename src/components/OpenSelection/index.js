@@ -28,27 +28,26 @@ function getStyles(name, personName, theme) {
 
 export default function MultipleSelect(props) {
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  const [tipoGasto, setTipoGasto] = React.useState([]);
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
+    setTipoGasto(
       // On autofill we get a the stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+    <>
         <InputLabel id="demo-multiple-name-label">Tipos</InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           multiple
-          value={personName}
+          value={tipoGasto}
           onChange={handleChange}
           input={<OutlinedInput label="Name" />}
           MenuProps={MenuProps}
@@ -57,13 +56,12 @@ export default function MultipleSelect(props) {
             <MenuItem
               key={name}
               value={name}
-              style={getStyles(name, personName, theme)}
+              style={getStyles(name, tipoGasto, theme)}
             >
               {name}
             </MenuItem>
           ))}
         </Select>
-      </FormControl>
-    </div>
+    </>
   );
 }
