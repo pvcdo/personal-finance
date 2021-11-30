@@ -6,23 +6,17 @@ export const Nav = styled.nav`
 	height: 85px;
 	display: flex;
 	justify-content: space-between;
-	/*padding: 0.2rem calc((100vw - 1000px) / 2);*/
-	/*justify-content: flex-end;*/
+  align-items: center;
+  padding: 0 50px;
 `;
 
-export const Logo = styled.h2`
+export const Logo = styled.h1`
   color: #fff;
-  margin-left: 20px;
 `;
 
 export const NavMenu = styled.div`
   display: flex;
   align-items: right;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
   @media screen and (max-width: 768px) {
     display: none;
   }
