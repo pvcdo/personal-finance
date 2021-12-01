@@ -18,10 +18,10 @@ const divDescStyle = {
 };
 
 const options = [
-    {value: '', label:'Tipo'},
-    { value: 'cc', label: 'Cartão de crédito' },
-    { value: 'bernardo', label: 'Bernardo' },
-    { value: 'casa', label: 'Casa' }
+    { value: '',            label:'Tipo'},
+    { value: 'cc',          label: 'Cartão de crédito' },
+    { value: 'bernardo',    label: 'Bernardo' },
+    { value: 'casa',        label: 'Casa' }
 ]
 
 const NovoGasto = () => {
@@ -32,13 +32,26 @@ const NovoGasto = () => {
     const [tipo, setTipo] = useState()
     const [descricao, setDescricao] = useState()
 
+    class Despesa {
+        constructor(data,valor,tipo,descricao){
+            this.data = data
+            this.valor = valor
+            this.tipo = tipo
+            this.descricao = descricao
+        }
+    }
+
+    
+
     const armazenar = () => {
-        setRegistro((e)=>{e++})
-        localStorage.setItem("registro",registro)
-        localStorage.setItem("data",data)
-        localStorage.setItem("valor",valor)
-        localStorage.setItem("tipo",tipo)
-        localStorage.setItem("descricao",descricao)
+        const despesa = new Despesa(
+            data,
+            valor,
+            tipo,
+            descricao
+        )
+        localStorage.setItem(registro, JSON.stringify(despesa))
+        setRegistro(registro + 1)
     }
 
     return(
@@ -49,26 +62,30 @@ const NovoGasto = () => {
                     <div style={divSecLineStyle}>
                         <label for='data'>Data</label>
                         <br/>
-                        <input id='data' type='date' name={data} onChange={(e) => {setData(e.target.value)}}/>
+                        <input id='data' type='date' onChange={(e) => {setData(e.target.value)}}/>
                     </div>
                     <div style={divSecLineStyle}>
                         <label for='valor'>Valor</label>
                         <br/>
-                        <input id='valor' type='number' name={valor} onChange={(e) => {setValor(e.target.value)}}/>
+                        <input id='valor' type='number' onChange={(e) => {setValor(e.target.value)}}/>
                     </div>
                     <div style={{width:'300px'}}>
                         <label for='tipo'>Tipo</label>
                         <br/>
                         {/* essa o pai criou sozinho! */}
-                        <Form.Select> 
+                        <Form.Select 
+                            id="tipo"
+                            onChange={ (e)=>{ 
+                                setTipo(e.target.value)
+                                document.getElementById('tipo').style.border= '1px solid #676774'
+
+                        }}> 
                             {options.map((op) => {
                                 return (
-                                    <option 
-                                        name={tipo} 
+                                    <option
                                         value={op.value}
-                                        onChange={(e)=> setTipo(e.target.value)}
-                                        >
-                                            {op.label}
+                                    >
+                                        {op.label}
                                     </option>
                                 )
                             })}

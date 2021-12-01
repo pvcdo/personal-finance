@@ -17,7 +17,7 @@ export const Logo = styled.h1`
 export const NavMenu = styled.div`
   display: flex;
   align-items: right;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 580px) {
     display: none;
   }
 `;
