@@ -8,16 +8,16 @@ return (
 	<Nav>
 		<Logo>Logo</Logo>
 		<NavMenu>
-			<NavLink to='/painel' activeStyle>
+			<NavLink to='/painel'>
 				Painel
 			</NavLink>
-			<NavLink to='/novogasto' activeStyle>
+			<NavLink to='/novogasto'>
 				Novo gasto
 			</NavLink>
-			<NavLink to='/historico' activeStyle>
+			<NavLink to='/historico'>
 				Historico
 			</NavLink>
-			<NavLink to='/' activeStyle>
+			<NavLink to='/'>
 				<Button variant="outline-light">
 					Sair
 				</Button>

@@ -26,7 +26,9 @@ const options = [
 
 const NovoGasto = () => {
 
-    const [registro, setRegistro] = useState(0)
+    const [registro, setRegistro] = useState(
+        localStorage.length
+    )
     const [data, setData] = useState()
     const [valor, setValor] = useState()
     const [tipo, setTipo] = useState()
@@ -41,17 +43,32 @@ const NovoGasto = () => {
         }
     }
 
-    
-
     const armazenar = () => {
-        const despesa = new Despesa(
-            data,
-            valor,
-            tipo,
-            descricao
-        )
-        localStorage.setItem(registro, JSON.stringify(despesa))
-        setRegistro(registro + 1)
+        if( data === "" || data === undefined || 
+            valor === "" || valor === undefined || 
+            tipo === "" || tipo === undefined || 
+            descricao === "" || descricao === undefined){
+            alert("Preencha todos os campos!")
+        }else{
+            const despesa = new Despesa(
+                data,
+                valor,
+                tipo,
+                descricao
+            )
+            localStorage.setItem(registro, JSON.stringify(despesa))
+            setRegistro(registro + 1)
+            
+            document.getElementById('data').value=""
+            document.getElementById('valor').value=""
+            document.getElementById('tipo').value=""
+            document.getElementById('descricao').value=""
+    
+            setData()
+            setValor()
+            setTipo()
+            setDescricao()
+        }
     }
 
     return(
@@ -83,6 +100,7 @@ const NovoGasto = () => {
                             {options.map((op) => {
                                 return (
                                     <option
+                                        key={op.value}
                                         value={op.value}
                                     >
                                         {op.label}
