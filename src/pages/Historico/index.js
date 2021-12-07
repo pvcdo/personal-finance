@@ -10,19 +10,30 @@ const border = {
 }
 
 const Historico = () => {
+
+    function apagarRegistro(id){
+        alert(`Vamos apagar a linha ${id}`)
+    }
+
+    function editarRegistro(id){
+        alert(`Vamos editar a linha ${id}`)
+    }
     
     const carregarHistorico = () => {
         let regs = []
         for(let n = 0; n < localStorage.length; n++){
             let despesa = JSON.parse(localStorage.getItem(n))
             
-            let data = despesa.data
+            let dia = despesa.data.slice(-2)
+            let mes = despesa.data.substr(-5,2)
+            let ano = despesa.data.substr(-10,4)
+            let data = dia + '/' + mes + '/' + ano
             let tipo = despesa.tipo
             let valor = despesa.valor
             let descricao = despesa.descricao
 
             regs.push(
-                <tr>
+                <tr id={n}>
                     <td>{data}</td>
                     <td>{tipo}</td>
                     <td>{valor}</td>
