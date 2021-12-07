@@ -1,7 +1,13 @@
 import Navbar from '../../components/Navbar';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { Container } from '../../components/Container/style'
+import Table from 'react-bootstrap/Table'
 
 import React from "react";
+
+const border = {
+    border: "1px solid #dddddd",
+}
 
 const Historico = () => {
     
@@ -21,7 +27,12 @@ const Historico = () => {
                     <td>{tipo}</td>
                     <td>{valor}</td>
                     <td>{descricao}</td>
-                    
+                    <td style={{textAlign:"center"}}>
+                        <i className="far fa-edit"></i>
+                    </td>
+                    <td style={{textAlign:"center"}}>
+                        <span style={{color:"red"}}><i className="fas fa-trash-alt"></i></span>
+                    </td>
                 </tr>
             )
         }
@@ -31,22 +42,23 @@ const Historico = () => {
     return(
         <>
             <Navbar/>
-            <h1>Página de historico</h1> 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Tipo</th>
-                        <th>Valor</th>
-                        <th>Descrição</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {carregarHistorico()}
-                </tbody>
-            </table>
+            <Container>
+                <h1>Página de historico</h1> 
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th style={border}>Data</th>
+                            <th style={border}>Tipo</th>
+                            <th style={border}>Valor</th>
+                            <th style={border}>Descrição</th>
+                            <td colSpan="2"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {carregarHistorico()}
+                    </tbody>
+                </Table>
+            </Container>
         </>
     )
     
