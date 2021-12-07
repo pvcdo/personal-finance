@@ -36,6 +36,18 @@ const Historico = () => {
                 </tr>
             )
         }
+
+        if(localStorage.length === 0){
+            
+            regs.push(
+                <tr>
+                    <td colSpan="5" style={{textAlign:"center"}}>
+                        Histórico vazio! Registre novos gastos e faça a consulta nesta página!
+                    </td>
+                </tr>
+            )
+        }
+
         return regs
     }
 
